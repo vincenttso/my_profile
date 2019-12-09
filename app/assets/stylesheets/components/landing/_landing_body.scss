@@ -18,12 +18,12 @@
     }
   }
 
-  .body-display {
+  .display-projects {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 12px;
     width: 100%;
     padding: 12px;
-    margin: 32px 0;
+    margin: 32px 0 96px;
   }
 }

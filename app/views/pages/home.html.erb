@@ -1,10 +1,20 @@
 <div class="container-main">
-  <div class="navbar-main">
+  <div class="navbar-main js-navbar">
     <div class="navbar-left">
       <p>Vincent Tso</p>
     </div>
     <div class="navbar-right">
-      <p>Test text</p>
+      <ul class="list-inline d-flex align-items-center">
+        <li class="list-item">
+          <p>Projects</p>
+        </li>
+        <li class="list-item">
+          <p>About</p>
+        </li>
+        <li class="list-item">
+          <p>Contact</p>
+        </li>
+      </ul>
     </div>
   </div>
   <div class="landing-banner">
@@ -18,28 +28,33 @@
       </div>
     </div>
     <div class="foreground">
-      <%= image_tag "foreground-portfolio.png", alt: "alttext", class: 'img-banner' %>
+      <%= image_tag "foreground-portfolio.png", alt: "alttext", class: 'img-banner js-img-banner' %>
       <div class="landing-body">
         <div class="body-description">
           <h2>Portfolio</h2>
           <p>Here is a selection of my personal projects</p>
         </div>
         <div class="body-display">
-          <% @projects.each do |project| %>
-            <div class="card-project">
-              <%= link_to project.url do %>
-                <div class="card-flip">
-                  <div class="card-front">
-                    <%= image_tag project.image, class: 'card-img', alt: "alttext" %>
+          <div class="display-projects">
+            <% @projects.each do |project| %>
+              <div class="card-project">
+                <%= link_to project.url do %>
+                  <div class="card-flip">
+                    <div class="card-front">
+                      <%= image_tag project.image, class: 'card-img', alt: "alttext" %>
+                    </div>
+                    <div class="card-back">
+                      <h2><%= project.title %></h2>
+                      <p><%= project.description %></p>
+                    </div>
                   </div>
-                  <div class="card-back">
-                    <h2><%= project.title %></h2>
-                    <p><%= project.description %></p>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <div class="display-about">
+            <h2>About Me</h2>
+          </div>
         </div>
       </div>
       <div class="landing-footer d-flex justify-content-around align-items-center">

@@ -5,6 +5,20 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 16px;
+  padding: 0 16px;
   z-index: 1000;
+  transition: 0.2s;
+
+  p, ul {
+    margin: 0;
+  }
+}
+
+.navbar-dark {
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+}
+
+.navbar-up {
+  top: -56px;
 }
