@@ -1,0 +1,60 @@
+.landing-banner {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 8px;
+  perspective-origin: 0 0;
+  position: relative;
+  display: flex;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 91.3%;
+  height: 100%;
+  transform: translateZ(0px);
+}
+
+.foreground {
+  width: 100%;
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: 50px;
+  transform-origin: 0;
+  transform: translateZ(1px) scale(0.875);
+  position: absolute;
+  top: -47px;
+}
+
+.img-banner {
+  width: 100%;
+}
+
+// Foreground Content
+
+.foreground-content {
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+  transform: translateZ(-2px) scale(1.25);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .content-text {
+    text-align: center;
+
+    h1 {
+      font-weight: bold;
+      font-size: 5.5rem;
+    }
+  }
+}
+
+// .parallax-child {
+//   transform-origin: 0 0;
+//   transform: translateZ(-2px) scale(3);
+// }

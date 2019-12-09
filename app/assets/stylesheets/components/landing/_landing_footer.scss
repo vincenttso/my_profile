@@ -1,0 +1,34 @@
+.landing-footer {
+  width: 100%;
+  height: 100px;
+  background: #000;
+
+  .footer-link {
+    list-style: none;
+
+    li {
+      margin: 24px;
+      color: $main;
+      opacity: 0.8;
+      transition: 0.2s;
+      font-size: 24px;
+      position: relative;
+
+      &:hover {
+        text-decoration: none;
+        color: $main;
+        opacity: 1;
+      }
+
+      .link-square {
+        position: absolute;
+        top: -6px;
+        left: -12px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid $main;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.landing-body {
+  margin: 0 auto;
+  width: 90%;
+  color: #000;
+
+  .body-description {
+    text-align: center;
+    margin: 32px;
+    padding: 32px;
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 32px;
+    }
+
+    p {
+      letter-spacing: 0.1em;
+    }
+  }
+
+  .body-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 12px;
+    width: 100%;
+    padding: 12px;
+    margin: 32px 0;
+  }
+}
