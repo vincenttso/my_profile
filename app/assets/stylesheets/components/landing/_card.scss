@@ -1,6 +1,7 @@
 .card-project {
   height: 210px;
   overflow: hidden;
+  box-shadow: 8px 8px 0 0 $main-dark;
 
   .card-flip {
     position: relative;
@@ -10,11 +11,13 @@
 
     .card-front {
       background-color: #bbb;
+      height: 100%;
       color: $main;
       transition: 0.4s;
 
       .card-img {
         width: 100%;
+        height: 100%;
         object-fit: cover;
         transition: 0.2s;
       }
@@ -22,8 +25,18 @@
 
     .card-back {
       position: absolute;
+      height: 100%;
+      width: 100%;
       transition: transform 0.4s;
       color: #333;
+
+      h2 {
+        margin: 8px 0 16px;
+      }
+
+      p {
+        margin: 0;
+      }
     }
 
     &:hover .card-back {
@@ -33,13 +46,7 @@
 
     &:hover .card-front {
       transform: scale(1.2);
-      opacity: 0.2;
+      opacity: 0.1;
     }
-  }
-
-  h2 {
-    width: 100%;
-    height: 100%;
-    color: #333;
   }
 }

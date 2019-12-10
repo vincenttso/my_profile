@@ -1,9 +1,9 @@
 .landing-body {
   margin: 0 auto;
   width: 90%;
-  color: #000;
+  color: #515151;
 
-  .body-description {
+  .display-body {
     text-align: center;
     margin: 32px;
     padding: 32px;
@@ -16,14 +16,65 @@
     p {
       letter-spacing: 0.1em;
     }
-  }
 
-  .display-projects {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 12px;
-    width: 100%;
-    padding: 12px;
-    margin: 32px 0 96px;
+    .display-projects-body {
+      height: 100vh;
+
+      .display-projects-header {
+        text-transform: uppercase;
+      }
+
+      .display-projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 12px;
+        width: 100%;
+        padding: 12px;
+        margin: 32px 0 172px;
+
+        p {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+
+    .display-about {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+      height: 100vh;
+
+      .about-card {
+        background: $main;
+        padding: 16px 32px;
+        top: 0;
+        box-shadow: 8px 8px 0 4px $main-dark;
+        animation: float-side 4s ease-in-out infinite;
+
+        h2 {
+          animation: float-side 6s ease-in-out infinite;
+        }
+
+        p {
+          animation: float-side 8s ease-in-out infinite;
+        }
+      }
+
+      @keyframes float-side {
+        0% {
+          transform: translateY(-10px);
+        }
+
+        50% {
+          transform: translateY(10px);
+        }
+
+        100% {
+          transform: translateY(-10px);
+        }
+      }
+    }
   }
 }

@@ -4,9 +4,17 @@
 }
 
 .list-item {
-  margin: 16px;
+  padding: 0;
+  opacity: 0.8;
+  transition: 0.2s;
 
   p {
     margin: 0;
+    padding: 16px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
   }
 }

@@ -7,8 +7,10 @@ class NavbarScroll {
   // Keep the constructor lean, don't add anything more to this.
   constructor(el) {
     this.el = el;
-    this.landingBanner = document.querySelector('.landing-banner')
-    this.imgBanner = document.querySelector('.js-img-banner');
+    this.navbarToolEls = this.el.querySelectorAll('.js-navbar-tool');
+    this.landingBannerEl = document.querySelector('.landing-banner');
+    this.imgBannerEl = document.querySelector('.js-img-banner');
+    this.activeBar = this.el.querySelector('.js-active-bar');
 
     this.scrollPos = 0;
 
@@ -17,13 +19,14 @@ class NavbarScroll {
 
   init() {
     this.checkNavbarPastBannerHeight();
-    this.checkNavbarScrollUp();
+    this.activeNavbarTool();
   }
 
   checkNavbarPastBannerHeight() {
-    this.landingBanner.addEventListener('scroll', (event) => {
-      if (this.imgBanner) {
-        const imgPos = this.imgBanner.getBoundingClientRect();
+    this.landingBannerEl.addEventListener('scroll', (event) => {
+      if (this.imgBannerEl) {
+        const imgPos = this.imgBannerEl.getBoundingClientRect();
+        console.log(Math.abs(imgPos.top));
         if (Math.abs(imgPos.top) >= imgPos.height) {
           return this.el.classList.add('navbar-dark');
         }
@@ -33,24 +36,17 @@ class NavbarScroll {
     });
   }
 
-  checkNavbarScrollUp() {
-    this.landingBanner.addEventListener('scroll', (event) => {
-      if (this.imgBanner) {
-        const imgPos = this.imgBanner.getBoundingClientRect();
-        if (Math.abs(imgPos.top) >= imgPos.height) {
-          if (Math.abs(imgPos.top) <= this.scrollPos) {
-            this.el.classList.add('navbar-up');
-          }
-          else {
-            this.el.classList.remove('navbar-up');
-          }
+  activeNavbarTool() {
+    this.navbarToolEls.forEach((toolEl) => {
+      toolEl.addEventListener('click', (event) => {
+        this.navbarToolEls.forEach((toolEl) => {
+          toolEl.classList.remove('tool-active');
+        });
 
-          this.scrollPos = Math.abs(imgPos.top);
-        }
-        else {
-          this.el.classList.remove('navbar-up');
-        }
-      }
+        event.target.parentElement.classList.add('tool-active');
+        event.target.parentElement.appendChild(this.activeBar);
+        this.activeBar.style.translateX = event.target.parentElement.offsetLeft;
+      })
     });
   }
 }

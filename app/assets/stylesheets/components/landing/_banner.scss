@@ -45,12 +45,20 @@
   align-items: center;
 
   .content-text {
+    transform: translateY(-320px);
+    opacity: 0;
     text-align: center;
+    transition: 1.8s cubic-bezier(.84,.17,.18,.83);
 
     h1 {
       font-weight: bold;
       font-size: 5.5rem;
     }
+  }
+
+  .content-text-show {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
