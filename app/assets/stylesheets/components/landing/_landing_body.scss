@@ -51,18 +51,18 @@
         padding: 16px 32px;
         top: 0;
         box-shadow: 8px 8px 0 4px $main-dark;
-        animation: float-side 4s ease-in-out infinite;
+        animation: float-fast 4s ease-in-out infinite;
 
         h2 {
-          animation: float-side 6s ease-in-out infinite;
+          animation: float-fast 6s ease-in-out infinite;
         }
 
         p {
-          animation: float-side 8s ease-in-out infinite;
+          animation: float-fast 8s ease-in-out infinite;
         }
       }
 
-      @keyframes float-side {
+      @keyframes float-fast {
         0% {
           transform: translateY(-10px);
         }
