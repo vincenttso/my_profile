@@ -13,15 +13,15 @@ puts 'Seeding projects...'
 projects = [
              {
               title: 'The Mocktails',
-              description: 'A simple web application to display your very own cocktail recipes!
-              Created during my time in Le Wagon Melbourne - Batch #315',
+              description: 'Ruby + Ruby on Rails + Javascript',
+              time: 'Created during my time in Le Wagon Melbourne - Batch #315',
               url: 'https://the-mocktails.herokuapp.com/',
               image: 'the-mocktail.png'
              },
              {
               title: 'Weekend PA',
-              description: 'A web application designed for mobile to act as a self-routing task manager (Yay effeciency!).
-              Created during my time in Le Wagon Melbourne - Batch #315',
+              description: 'Ruby + Ruby on Rails + Javascript',
+              time: 'Created during my time in Le Wagon Melbourne - Batch #315',
               url: 'https://weekend-pa.herokuapp.com/',
               image: 'weekend-pa.png'
              }
