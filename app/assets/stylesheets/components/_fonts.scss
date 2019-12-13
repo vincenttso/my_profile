@@ -1,23 +1,28 @@
-h1 {
-  font-weight: bold;
-  font-size: 5.5rem;
-}
-
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.2rem;
 }
 
 p {
-  letter-spacing: 0.2em;
+  margin: 0;
+  letter-spacing: 0.2rem;
 }
 
-a {
-  &:hover {
-    text-decoration: none;
-  }
+li {
+  margin: 0;
+  letter-spacing: 0.2rem;
 }
 
-span {
-  color: $secondary;
+.banner-header {
+  font-size: 12rem;
+}
+
+.display-header {
+  color: $main;
+  font-size: 12rem;
+  -webkit-text-fill-color: $main;
+  -webkit-text-stroke: 1px $black;
+  z-index: -5;
+  writing-mode: vertical-rl;
+  margin: 0 24px;
 }

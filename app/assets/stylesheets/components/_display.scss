@@ -1,0 +1,27 @@
+.display {
+  height: 100vh;
+}
+
+.display-about, .display-projects, .display-contact {
+  display: flex;
+  align-items: center;
+  margin: 48px 0;
+}
+
+.display-parallax {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+  perspective: 8px;
+  perspective-origin: 0 0;
+
+  .parallax-child {
+    transform-origin: 0 0;
+    transform: translateZ(-3px) scale(0.625);
+  }
+}
+
+
+.display-content {
+  flex-grow: 1;
+}

@@ -1,6 +1,6 @@
 import "bootstrap";
-import { initNavbar } from './plugins/navbar';
-import { initBanner } from './plugins/banner';
+import { initNavbar } from './plugins/navbar.js';
+import { initButtonNav } from './plugins/buttonNav.js';
 
-initNavbar('.js-navbar');
-initBanner('.js-banner-text');
+initNavbar('.js-portfolio-navbar');
+initButtonNav('.js-btn-nav');

@@ -1,0 +1,10 @@
+.img-md {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.img-circle {
+  border: 8px solid $main;
+  border-radius: 50%;
+}

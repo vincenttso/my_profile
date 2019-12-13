@@ -1,116 +1,145 @@
-<div class="loading-screen js-loading-screen">
-  <div class="loading-content">
-    <h1>Currently Loading...</h1>
-  </div>
-</div>
-<div class="container-main js-main-content d-none">
-  <div class="navbar-main js-navbar">
+<div class="portfolio-container">
+  <div class="portfolio-navbar navbar-hidden js-portfolio-navbar">
     <div class="navbar-left">
       <p>Vincent Tso</p>
     </div>
     <div class="navbar-right">
-      <ul class="list-inline d-flex align-items-center">
-        <li class="list-item tool-active js-navbar-tool">
-          <p>About</p>
-          <div class="active-bar js-active-bar"></div>
+      <ul class="list-inline">
+        <li>
+          About
         </li>
-        <li class="list-item js-navbar-tool">
-          <p>Projects</p>
+        <li>
+          Projects
         </li>
-        <li class="list-item js-navbar-tool">
-          <p>Contact</p>
+        <li>
+          Contact
         </li>
       </ul>
     </div>
   </div>
-  <div class="landing-banner">
-    <div class="background">
-      <%= image_tag "background-portfolio.png", alt: "alttext", class: 'img-banner' %>
+  <div class="portfolio-display display-parallax">
+    <div class="portfolio-banner display">
+      <h1 class="banner-header header-left" data-aos="fade-right" data-aos-duration="1500">Vincent</h1>
+      <h1 class="banner-header header-right" data-aos="fade-left" data-aos-duration="1500">Tso</h1>
+      <p class="animation-target js-animation-target js-banner-end">Junior Full Stack Web Developer</p>
+      <button class="btn-nav btn-nav-hide js-btn-nav">
+        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-chevron-down"></i>
+      </button>
     </div>
-    <div class="foreground-content">
-      <div class="content-text js-banner-text">
-        <h1>Vincent Tso</h1>
-        <p>Junior Full Stack Web Developer</p>
+    <div class="display-about">
+      <h1 class="display-header parallax-child">About</h1>
+      <div class="display-content">
+        <div class="display-left">
+          <div class="status-bar" data-amount="">Ruby/Rails</div>
+          <div class="status-bar" data-amount="">HTML5</div>
+          <div class="status-bar" data-amount="">CSS3</div>
+          <div class="status-bar" data-amount="">JavaScript</div>
+        </div>
+        <div class="display-right">
+          <%= image_tag "vincent.JPG", class: 'img-md img-circle', alt: "alttext" %>
+          <p>Hey! I'm a Junior Full Stack Web Developer who's seriously passionate about what I do. As a recent graduate from the Le Wagon Melbourne bootcamp, batch #315, my drive to learn new things and test my limits has never been so full. I love seeing things being built from the ground up and coming to life, and I'm sure that we can create something spectacular together.</p>
+        </div>
       </div>
     </div>
-    <div class="foreground">
-      <%= image_tag "foreground-portfolio.png", alt: "alttext", class: 'img-banner js-img-banner' %>
-      <%= image_tag "chevron-down.png", class: 'img-sm img-nav', alt: "alttext" %>
-      <div class="landing-body">
-        <div class="display-body">
-          <div class="display-about text-center">
-            <%= image_tag "vincent.JPG", class: 'img-circle-lg display-img', alt: "alttext" %>
-            <div class="about-card">
-              <h2>About Me</h2>
-              <p>Hey!
-              I'm a Junior Full Stack Web Developer who's seriously passionate about what I do.
-              As a recent graduate from the <span>Le Wagon Melbourne</span> bootcamp, batch #315, my drive to learn new things and test my limits has never been so full.
-              I love seeing things being built from the ground up and coming to life, and I'm sure that we can create something spectacular together.
-              </p>
-            </div>
-          </div>
-          <div class="display-projects-body">
-            <div class="display-projects-header">
-              <h2>Portfolio</h2>
-              <p>Here is a selection of my personal projects</p>
-            </div>
-            <div class="display-projects">
-              <% @projects.each do |project| %>
-                <div class="card-project">
-                  <%= link_to project.url do %>
-                    <div class="card-flip">
-                      <div class="card-front">
-                        <%= image_tag project.image, class: 'card-img', alt: "alttext" %>
-                      </div>
-                      <div class="card-back">
-                        <h2><%= project.title %></h2>
-                        <span><%= project.description %></span>
-                        <p><%= project.time %></p>
-                      </div>
-                    </div>
-                  <% end %>
+    <div class="display-projects">
+      <div class="display-content">
+        <div class="display-left">
+          <p>Here is a selection of all of my personal projects I've worked on.</p>
+          <% @projects.each do |project| %>
+            <div class="card-main">
+              <%= link_to project.url do %>
+                <div class="card-body">
+                  <!-- <%= image_tag project.image, alt: "alttext" %> -->
                 </div>
               <% end %>
             </div>
-          </div>
+          <% end %>
         </div>
       </div>
-      <div class="landing-footer d-flex justify-content-around align-items-center">
-        <div class="footer-links">
-          <ul class="footer-link d-flex align-items-center">
-            <%= link_to 'https://twitter.com/iamvincey' do %>
-            <li>
-              <i class="fab fa-twitter"></i>
-              <div class="link-square"></div>
-            </li>
-            <% end %>
-            <%= link_to 'https://www.facebook.com/vincent.tso.39' do %>
-            <li>
-              <i class="fab fa-facebook-f"></i>
-              <div class="link-square"></div>
-            </li>
-            <% end %>
-            <%= link_to 'https://www.instagram.com/vincent.tso/' do %>
-            <li>
-              <i class="fab fa-instagram"></i>
-              <div class="link-square"></div>
-            </li>
-            <% end %>
-            <%= link_to 'https://www.linkedin.com/in/vincenttso/' do %>
-            <li>
-              <i class="fab fa-linkedin-in"></i>
-              <div class="link-square"></div>
-            </li>
-            <% end %>
-            <%= link_to 'https://github.com/vincenttso' do %>
-            <li>
-              <i class="fab fa-github"></i>
-              <div class="link-square"></div>
-            </li>
-            <% end %>
-          </ul>
-        </div>
+      <h1 class="display-header parallax-child">Projects</h1>
+    </div>
+    <div class="display-contact">
+      <h1 class="display-header parallax-child">Contact</h1>
+      <div class="display-content">
+        <form action="">
+          <input type="text" placeholder="Name">
+          <input type="text" placeholder="email">
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <input type="submit">
+        </form>
       </div>
     </div>
   </div>
+  <div class="portfolio-footer">
+    <ul class="list-inline">
+      <li>
+        <%= link_to 'https://www.linkedin.com/in/vincenttso/', class: 'btn-link' do %>
+        <i class="fab fa-github"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to 'https://www.linkedin.com/in/vincenttso/', class: 'btn-link' do %>
+        <i class="fab fa-linkedin-in"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to 'https://www.facebook.com/vincent.tso.39', class: 'btn-link' do %>
+        <i class="fab fa-facebook-f"></i>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

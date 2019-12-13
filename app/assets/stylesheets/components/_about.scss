@@ -1,0 +1,29 @@
+.display-about {
+
+  .display-header {
+    transform: rotate(180deg);
+  }
+
+  .display-content {
+    display: flex;
+    align-items: center;
+
+    .display-left, .display-right {
+      width: 50%;
+    }
+
+    .display-left {
+
+    }
+
+    .display-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      text-align: center;
+      margin: 0 52px;
+    }
+  }
+
+}
