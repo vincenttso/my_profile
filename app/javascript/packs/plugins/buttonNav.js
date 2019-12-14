@@ -40,9 +40,14 @@ class ButtonNav {
   }
 
   scrollWindowToDisplayContent() {
+    const bannerPos = this.el.parentElement.getBoundingClientRect();
+    const scrollContainer = document.querySelector('.js-scroll-container');
     this.el.addEventListener('click', () => {
-      const bannerPos = this.el.parentElement.getBoundingClientRect();
-      window.scrollBy(0, bannerPos.bottom);
+      scrollContainer.scrollBy({
+                                left: 0,
+                                top: bannerPos.bottom,
+                                behavior: 'smooth'
+                              });
     });
   }
 }

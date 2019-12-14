@@ -1,3 +1,5 @@
+
+
 .display {
   height: 100vh;
 }
@@ -17,7 +19,7 @@
 
   .parallax-child {
     transform-origin: 0 0;
-    transform: translateZ(-3px) scale(0.625);
+    transform: translateZ(3px) scale(0.625);
   }
 }
 

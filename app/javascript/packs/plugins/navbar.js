@@ -8,6 +8,7 @@ class Navbar {
   constructor(el) {
     this.el = el;
     this.scrollPos = 0;
+    this.scrollEl = document.querySelector('.js-scroll-container');
 
     this.init();
   }
@@ -20,8 +21,8 @@ class Navbar {
     const bannerEnd = document.querySelector('.js-banner-end');
     if (bannerEnd) {
       const bannerEndPos = bannerEnd.getBoundingClientRect();
-      window.addEventListener('scroll', () => {
-        if (window.scrollY >= bannerEndPos.bottom) {
+      this.scrollEl.addEventListener('scroll', (event) => {
+        if (event.target.scrollTop >= bannerEndPos.bottom) {
           return this.el.classList.remove('navbar-hidden');
         }
 
