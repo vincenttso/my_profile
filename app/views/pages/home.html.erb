@@ -27,70 +27,72 @@
         <i class="fas fa-chevron-down"></i>
       </button>
     </div>
-    <div class="display-about display js-display-body">
-      <h1 class="display-header parallax-child">About</h1>
-      <div class="display-content">
-        <div class="display-left">
-          <div class="status-bar" data-amount="">Ruby/Rails</div>
-          <div class="status-bar" data-amount="">HTML5</div>
-          <div class="status-bar" data-amount="">CSS3</div>
-          <div class="status-bar" data-amount="">JavaScript</div>
-        </div>
-        <div class="display-right">
-          <%= image_tag "vincent.JPG", class: 'img-md img-circle', alt: "alttext" %>
-          <p>Hey! I'm a Junior Full Stack Web Developer who's seriously passionate about what I do. As a recent graduate from the Le Wagon Melbourne bootcamp, batch #315, my drive to learn new things and test my limits has never been so full. I love seeing things being built from the ground up and coming to life, and I'm sure that we can create something spectacular together.</p>
-        </div>
-      </div>
-    </div>
-    <div class="display-projects display js-display-body">
-      <div class="display-content">
-        <div class="display-left">
-          <p>Here is a selection of all of my personal projects I've worked on.</p>
-          <div class="project-grid">
-            <% @projects.each do |project| %>
-              <div class="card-main">
-                <%= link_to project.url do %>
-                  <div class="card-body">
-                    <%= image_tag project.image, class: 'img-grid', alt: "alttext" %>
-                  </div>
-                <% end %>
-              </div>
-            <% end %>
+    <div class="display-container js-display-container d-none">
+      <div class="display-about display js-display-body">
+        <h1 class="display-header parallax-child">About</h1>
+        <div class="display-content">
+          <div class="display-left">
+            <div class="status-bar" data-amount=""><p>Ruby/Rails</p></div>
+            <div class="status-bar" data-amount=""><p>HTML5</p></div>
+            <div class="status-bar" data-amount=""><p>CSS3</p></div>
+            <div class="status-bar" data-amount=""><p>JavaScript</p></div>
+          </div>
+          <div class="display-right">
+            <%= image_tag "vincent.JPG", class: 'img-md img-circle', alt: "alttext" %>
+            <p>Hey! I'm a Junior Full Stack Web Developer who's seriously passionate about what I do. As a recent graduate from the <span>Le Wagon Melbourne bootcamp,</span> batch #315, my drive to learn new things and test my limits has never been so full. I love seeing things being built from the ground up and coming to life, and I'm sure that we can create something spectacular together.</p>
           </div>
         </div>
       </div>
-      <h1 class="display-header parallax-child">Projects</h1>
-    </div>
-    <div class="display-contact display js-display-body">
-      <h1 class="display-header parallax-child">Contact</h1>
-      <div class="display-content">
-        <form action="">
-          <input type="text" placeholder="Name">
-          <input type="text" placeholder="email">
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-          <input type="submit">
-        </form>
+      <div class="display-projects display js-display-body">
+        <h1 class="display-header parallax-child">Projects</h1>
+        <div class="display-content">
+          <div class="display-left">
+            <p>Here is a selection of all of my personal projects I've worked on.</p>
+            <div class="project-grid">
+              <% @projects.each do |project| %>
+                <div class="card-main">
+                  <%= link_to project.url do %>
+                    <div class="card-body">
+                      <%= image_tag project.image, class: 'img-grid', alt: "alttext" %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="display-contact display js-display-body">
+        <h1 class="display-header parallax-child">Contact</h1>
+        <div class="display-content">
+          <form action="" class="form-contact">
+            <input type="text" placeholder="What's your name?">
+            <input type="text" placeholder="What's your email address?">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Would you like to send a message?"></textarea>
+            <input type="submit" class="btn-submit">
+          </form>
+        </div>
+      </div>
+      <div class="portfolio-footer">
+        <ul class="list-inline">
+          <li>
+            <%= link_to 'https://www.linkedin.com/in/vincenttso/', class: 'btn-link' do %>
+            <i class="fab fa-github"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to 'https://www.linkedin.com/in/vincenttso/', class: 'btn-link' do %>
+            <i class="fab fa-linkedin-in"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to 'https://www.facebook.com/vincent.tso.39', class: 'btn-link' do %>
+            <i class="fab fa-facebook-f"></i>
+            <% end %>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-  <div class="portfolio-footer">
-    <ul class="list-inline">
-      <li>
-        <%= link_to 'https://www.linkedin.com/in/vincenttso/', class: 'btn-link' do %>
-        <i class="fab fa-github"></i>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to 'https://www.linkedin.com/in/vincenttso/', class: 'btn-link' do %>
-        <i class="fab fa-linkedin-in"></i>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to 'https://www.facebook.com/vincent.tso.39', class: 'btn-link' do %>
-        <i class="fab fa-facebook-f"></i>
-        <% end %>
-      </li>
-    </ul>
   </div>
 </div>
 

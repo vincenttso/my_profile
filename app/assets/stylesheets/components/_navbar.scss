@@ -11,9 +11,12 @@
 
   p, li {
     padding: 16px;
+    opacity: 0.6;
+    transition: 0.2s;
 
     &:hover {
       cursor: pointer;
+      opacity: 1;
     }
   }
 

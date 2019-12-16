@@ -42,7 +42,12 @@ class ButtonNav {
   scrollWindowToDisplayContent() {
     const bannerPos = this.el.parentElement.getBoundingClientRect();
     const scrollContainer = document.querySelector('.js-scroll-container');
+    const displayContainer = document.querySelector('.js-display-container');
     this.el.addEventListener('click', () => {
+      if (displayContainer.classList.contains('d-none')) {
+        displayContainer.classList.remove('d-none');
+      }
+
       scrollContainer.scrollBy({
                                 left: 0,
                                 top: bannerPos.bottom,
