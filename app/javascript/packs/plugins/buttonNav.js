@@ -12,11 +12,11 @@ class ButtonNav {
   }
 
   async init() {
-    this.checkIfAnimationsCompleted();
+    this.checkIfAnimationIsCompleted();
     this.scrollWindowToDisplayContent();
   }
 
-  checkIfAnimationsCompleted() {
+  checkIfAnimationIsCompleted() {
     const animationTarget = document.querySelector('.js-animation-target');
     if (!animationTarget) {
       return;

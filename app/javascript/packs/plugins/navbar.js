@@ -7,6 +7,7 @@ class Navbar {
   // Keep the constructor lean, don't add anything more to this.
   constructor(el) {
     this.el = el;
+    this.navBtnEls = this.el.querySelectorAll('.js-navbar-btn');
     this.scrollPos = 0;
     this.scrollEl = document.querySelector('.js-scroll-container');
 
@@ -15,6 +16,7 @@ class Navbar {
 
   async init() {
     this.checkIfPastBanner();
+    this.checkIfClickBtn();
   }
 
   checkIfPastBanner() {
@@ -29,5 +31,20 @@ class Navbar {
         this.el.classList.add('navbar-hidden');
       });
     }
+  }
+
+  checkIfClickBtn() {
+    this.navBtnEls.forEach((navBtn) => {
+      navBtn.addEventListener('click', (event) => {
+        const scrollContainer = document.querySelector('.js-scroll-container');
+        this.el.addEventListener('click', () => {
+          scrollContainer.scrollBy({
+                                    left: 0,
+                                    top: document.querySelector(`.js-${event.target.innerHTML.trim().replace(/&nbsp;/g, '').toLowerCase()}`).getBoundingClientRect().top,
+                                    behavior: 'smooth'
+                                  });
+        });
+      });
+    });
   }
 }
