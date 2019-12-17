@@ -1,16 +1,36 @@
 .card-main {
   overflow: hidden;
+  position: relative;
 
   .card-body {
     padding: 0;
+    // position: fixed;
 
     &:hover .img-grid {
       transform: scale(1.2);
       opacity: 0.1;
     }
 
+    &:hover .card-back {
+      transform: translateY(-100%);
+    }
+
     .img-grid {
-      transition: 0.2s;
+      transition: 0.4s;
+      // height: 100%;
+    }
+
+    .card-back {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform: translateY(0);
+      transition: transform 0.4s cubic-bezier(.98,.49,.35,.91);
+      color: $secondary;
     }
   }
 }
